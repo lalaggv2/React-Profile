@@ -1,5 +1,5 @@
 import React from "react";
-import { Card } from 'react-bootstrap'
+import { Card, Button } from 'react-bootstrap'
 
 function Projects(props) {
   return (
@@ -15,6 +15,7 @@ function Projects(props) {
         <Button variant="primary">Go somewhere</Button>
       </Card.Body>
     </Card>
-
+  )
+}
 
 export default Projects;

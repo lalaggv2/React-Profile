@@ -1,34 +1,45 @@
 
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { useLocation } from 'react-router-dom';
 
-export class Header extends Component {
+const UserHeader = ({ user }) => {
+  const location = useLocation();
 
-  render() {
-    return (
-      <header className='header mt-auto py-3 bg-dark text-white' style={{
-        position: 'relative',
-        top: 0,
-        width: '100%'
-      }}>
-        {/* <div className='container'><h3>Copyright &copy; 2020 - East Coast Insurance</h3>
-            <h5>Made with love by Angela, Diana, Lynn, Scott and Shannon</h5>
-            <footer className="footer mt-auto py-3 bg-dark text-white"> */}
-        <div className="container">
-          <h3>Copyright &copy; 2020 - East Coast Insurance</h3>
-          <h5>Made with ❤️️ by
-              <a
-              class="hover footer-links"
-              href="https://github.com/lalaggv2"
-              target="_blank"
-            >
-              {' '}Angela
-              </a>
+  return (
+    <HeaderContainer isHome={location.pathname === '/'}>
+      <Header>
+        <Image src={user.basics.picture} />
+        <div>
+          <h2>{user.basics.name}</h2>
+          <h4>
+            <p>{user.basics.username}</p>
 
-          </h5>
-        </div>
-      </header >
+          </h4>
+          <p>{user.basics.label}</p>
+          <p>Coding in {user.basics.region}</p>
+          <p>{user.basics.yearsOfExperience} years of experience as a developer</p>
+          <p>{user.basics.headline}</p>
+
     )
   }
 }
 
 export default Header;
+
+
+        </div>
+      </Header>
+      <div>
+        {/* <ViewResumeLink
+          href={`https://gitconnected.com/${user.basics.username}/resume`}
+          target="_blank"
+          rel="noopener noreferrer"
+        > */}
+
+        <span>View Résumé</span>
+      </div>
+    </HeaderContainer >
+  );
+};
+
+export default UserHeader;

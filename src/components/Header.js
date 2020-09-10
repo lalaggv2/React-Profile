@@ -1,5 +1,6 @@
 
 import React, { Component } from 'react';
+
 import { useLocation } from 'react-router-dom';
 
 const UserHeader = ({ user }) => {
@@ -21,7 +22,7 @@ const UserHeader = ({ user }) => {
           <p>{user.basics.headline}</p>
 
         </div>
-      </header>
+      </hcd ceader>
     </>
   );
 };
